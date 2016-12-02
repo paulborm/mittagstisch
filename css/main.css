@@ -23,7 +23,7 @@ body {
     font-family: sans-serif;
     background-color: #ebebeb;
 
-    padding: 3rem;
+    //padding: 3rem;
 }
 
 p {
@@ -34,9 +34,32 @@ p {
 
 
 
+
+
+
+/*-------------------- Card-container ----------------------*/
+
+.top-bar {
+    padding: 0.5rem 1rem;
+    background-color: black;
+    font-size: 1.4rem;
+    text-align: right;
+    color: white;
+}
+
+/*-------------------- Card-container ----------------------*/
+
+
+
+
+
+
+
+
 /*-------------------- Card-container ----------------------*/
 
 .card-container {
+    padding: 6rem;
     display: grid;
     grid-template-columns: minmax(40rem, 1fr) minmax(40rem, 1fr) minmax(40rem, 1fr);
     grid-column-gap: 4rem;
@@ -49,7 +72,7 @@ p {
 
 
 
-/*-------------------- Cards ----------------------*/
+/*-------------------- Card ----------------------*/
 
 .card {
     --card-padding: 2em;
@@ -72,12 +95,13 @@ p {
         margin-bottom: var(--card-padding);
     }
 
+    /*----------- Card Typo -----------*/
+
     .card__title {
         font-weight: normal;
         color: var(--card-title-color);
         margin: 0;
-    }
-        
+    }    
         .card__title--1 {
             font-size: 2.8em;
         }
@@ -121,11 +145,10 @@ p {
 /*-------------------- Meal ----------------------*/
 
 .meals {
-    --meals-padding: calc(var(--card-padding) / 2);
+    --meals-padding: 1em;
 
-    margin-top: var(--card-padding);
+    margin-top: calc(var(--meals-padding) * 2);
 }
-
 
     .meals__item-row {
         display: flex;
@@ -138,8 +161,8 @@ p {
 
 
     .meals__item {
-        padding-top: var(--card-padding);
-        padding-bottom: var(--card-padding);
+        padding-top: calc(var(--meals-padding) * 2);
+        padding-bottom: calc(var(--meals-padding) * 2);
 
         border-color: var(--border-color);
         border-width: 0.1rem;
@@ -169,6 +192,26 @@ p {
             line-height: 1;
         }
 
+
+    .meals__date {
+        font-size: 0.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+    }
+
+    .meals__title {
+        font-weight: normal;
+        color: var(--card-title-color);
+        margin: 0;
+        font-size: 1.4em;
+    }
+
+    .meals__cost {
+        font-size: 1.4em;
+        color: var(--card-title-color);
+    }
+
 /*-------------------- Meal-End ----------------------*/
 
 
@@ -184,35 +227,44 @@ p {
     display: inline-block;
 }
 
-
-.is-correct:after,
-.is-wrong:after,
-.location:after {
-    display: inline;
-    margin-left: 0.5em;
-    vertical-align: middle;
-}
-
 .is-correct {
     color: #65e065;
 }
-    .is-correct:after {
-        content: "✓";
-    }
 
 .is-wrong {
     color: #e03a3a;
 }
-    .is-wrong:after {
-        content: "❌";
+/*-------------------- helper-End ----------------------*/
+
+
+
+
+
+
+
+/*-------------------- Icons ----------------------*/
+
+.icon {
+    display: inline-block;
+}
+    .icon:after {
+        display: inline;
+        font-size: 1em;
+        vertical-align: middle;
     }
 
-
-.location:before {
-    content: "⚑";
+.icon--correct:after {
+    content: "✓";
     font-size: 1.5em;
-    margin-left: 0;
-    margin-right: 0.5em;
 }
 
-/*-------------------- helper-End ----------------------*/
+.icon--wrong:after {
+    content: "❌";
+}
+
+.icon--location:after {
+    content: "⚑";
+    font-size: 1.8em;
+}
+
+/*-------------------- Icons End ----------------------*/
